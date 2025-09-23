@@ -1,0 +1,11 @@
+[window]
+# startup_mode = "Fullscreen"
+startup_mode = "Maximized"
+opacity = 0.8
+[colors.primary]
+background = "#000000"
+[font]
+normal.family = "CommitMono Nerd Font Mono"
+offset = {x = 0, y = 7}
+glyph_offset = {x = 0, y = 5}
+size = 11
