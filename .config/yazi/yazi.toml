@@ -1,0 +1,10 @@
+[mgr]
+sort_dir_first = true
+show_symlink = true
+linemode = "size"
+# show_hidden = true
+
+[opener]
+edit = [
+	{ run = 'nvim "$@"', block = true, for = "unix" },
+]

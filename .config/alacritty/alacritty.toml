@@ -5,7 +5,9 @@ opacity = 0.8
 [colors.primary]
 background = "#000000"
 [font]
-normal.family = "CommitMono Nerd Font Mono"
+# normal.family = "CommitMono Nerd Font Mono"
+# normal.family = "Hack Nerd Font Mono"
+normal.family = "Monaspace Radon NF"
 offset = {x = 0, y = 7}
 glyph_offset = {x = 0, y = 5}
 size = 11

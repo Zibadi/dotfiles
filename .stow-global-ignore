@@ -22,5 +22,5 @@ _darcs
 ^/LICENSE.*
 ^/COPYING
 
-^.mpv/cache
-^.mpv/watch_later
+^\.mpv/cache
+^\.mpv/watch_later
