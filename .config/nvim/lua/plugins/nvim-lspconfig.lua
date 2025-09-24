@@ -15,7 +15,7 @@ return {
         vim.lsp.config('clangd', {
             capabilities = capabilities,
         })
-        vim.lsp.config('csharp_ls', {
+        vim.lsp.config('omnisharp', {
             capabilities = capabilities,
         })
 
