@@ -15,7 +15,7 @@ return {
         vim.lsp.config('clangd', {
             capabilities = capabilities,
         })
-        vim.lsp.config('omnisharp', {
+        vim.lsp.config('roslyn', {
             capabilities = capabilities,
         })
 
@@ -32,8 +32,33 @@ return {
         vim.cmd([[autocmd CursorHold * lua vim.diagnostic.open_float(nil, {focus=false})]])
 
         vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-        vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
-        vim.keymap.set("n", "gD", vim.lsp.buf.implementation, {})
+        vim.keymap.set("n", "gr", function() require("telescope.builtin").lsp_references() end, {})
+        vim.keymap.set("n", "gd", vim.lsp.buf.implementation, {})
+        vim.keymap.set("n", "gD", vim.lsp.buf.definition, {})
         vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
+        vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, {})
+        vim.keymap.set("n", "<leader>q", function() require("telescope.builtin").diagnostics() end, {})
+        vim.keymap.set("n", "<leader>l", function() vim.lsp.codelens.refresh() end, {})
+
+        -- Trigger CodeLens refresh when LSP attaches to a buffer
+        vim.cmd([[
+            augroup LspCodeLens
+                autocmd!
+                autocmd LspAttach * lua vim.lsp.codelens.refresh()
+            augroup END
+        ]])
+
+        local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+        for type, icon in pairs(signs) do
+            local hl = "DiagnosticSign" .. type
+            vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+        end
+
+        vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+            underline = true,
+            update_in_insert = false,
+            virtual_text = { spacing = 4, prefix = "●" },
+            severity_sort = true,
+        })
     end,
 }

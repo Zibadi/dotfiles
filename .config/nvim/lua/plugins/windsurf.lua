@@ -1,5 +1,5 @@
 return {
-    'Exafunction/codeium.vim',
+    'Exafunction/windsurf.vim',
     event = 'BufEnter',
     config = function()
         -- Change '<C-g>' here to any keycode you like.

@@ -1,7 +1,8 @@
 [mgr]
+# ratio=[1,4,0]
 sort_dir_first = true
 show_symlink = true
-linemode = "size"
+# linemode = "size"
 # show_hidden = true
 
 [opener]

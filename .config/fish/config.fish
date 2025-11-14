@@ -6,5 +6,5 @@ if status is-interactive
 end
 
 fish_add_path /home/zibadi/.local/bin
-
+fish_add_path -g -p ~/flutter/bin
 
