@@ -1,5 +1,7 @@
 return {
     'nvim-treesitter/nvim-treesitter',
+    branch = 'master',
+    build = ":TSUpdate",
     lazy = false,
     config = function()
         require('nvim-treesitter.configs').setup {
@@ -18,5 +20,6 @@ return {
                 additional_vim_regex_highlighting = false,
             },
         }
+        vim.highlight.priorities.semantic_tokens = 95
     end
 }

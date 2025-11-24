@@ -38,15 +38,6 @@ return {
         vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
         vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, {})
         vim.keymap.set("n", "<leader>q", function() require("telescope.builtin").diagnostics() end, {})
-        vim.keymap.set("n", "<leader>l", function() vim.lsp.codelens.refresh() end, {})
-
-        -- Trigger CodeLens refresh when LSP attaches to a buffer
-        vim.cmd([[
-            augroup LspCodeLens
-                autocmd!
-                autocmd LspAttach * lua vim.lsp.codelens.refresh()
-            augroup END
-        ]])
 
         local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
         for type, icon in pairs(signs) do

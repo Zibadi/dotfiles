@@ -1,0 +1,19 @@
+[init]
+	defaultBranch = main
+[user]
+	email = zybdym@gmail.com
+	name = Zibadi
+[safe]
+	directory = /home/zibadi/windows/Users/VIVO BOOK/source/repos/ToDoList
+	directory = /home/zibadi/windows/Users/VIVO BOOK/source/repos/hp-api
+[core]
+	autocrlf = true
+	pager = delta
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+    side-by-side = true
+    line-numbers = false
+[merge]
+	conflictStyle = zdiff3
