@@ -19,17 +19,17 @@ return {
             capabilities = capabilities,
         })
 
-        vim.diagnostic.config({
-            update_in_insert = true,
-            -- virtual_text = true,
-            underline = true,
-            signs = true,
-            -- severity_sort = true,
-        })
+        -- vim.diagnostic.config({
+        --     update_in_insert = true,
+        --     -- virtual_text = true,
+        --     underline = true,
+        --     signs = true,
+        --     -- severity_sort = true,
+        -- })
 
         -- Show line diagnostics automatically in hover window
-        vim.o.updatetime = 250
-        vim.cmd([[autocmd CursorHold * lua vim.diagnostic.open_float(nil, {focus=false})]])
+        -- vim.o.updatetime = 250
+        -- vim.cmd([[autocmd CursorHold * lua vim.diagnostic.open_float(nil, {focus=false})]])
 
         vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
         vim.keymap.set("n", "gr", function() require("telescope.builtin").lsp_references() end, {})
