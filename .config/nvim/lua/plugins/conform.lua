@@ -9,7 +9,8 @@ return {
                 go = { "goimports", "gofmt" },
                 python = { "black" },
                 cs = { "csharpier_ramboe" },
-                csproj = { "csharpier_ramboe" }
+                csproj = { "csharpier_ramboe" },
+                typescript = { "prettier" },
             },
             formatters = {
                 csharpier_ramboe = {

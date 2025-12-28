@@ -7,7 +7,6 @@
 	directory = /home/zibadi/windows/Users/VIVO BOOK/source/repos/ToDoList
 	directory = /home/zibadi/windows/Users/VIVO BOOK/source/repos/hp-api
 [core]
-	autocrlf = false
 	pager = delta
 [interactive]
 	diffFilter = delta --color-only

@@ -13,9 +13,7 @@ if type -q tmux
     end
 end
 
-
 fish_add_path /home/zibadi/.local/bin
-fish_add_path -g -p ~/flutter/bin
-
+fish_add_path -g -p ~/.dotnet/tools
 
 thefuck --alias | source
